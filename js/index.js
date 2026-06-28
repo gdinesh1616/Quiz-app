@@ -12,12 +12,6 @@ let data = {};
 
 // to fetch navbar
 
-fetch("../html/navbar.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("navbar").innerHTML = data;
-    })
-    .catch(error => console.log(error));
 
 
 if (window.location.pathname.endsWith("/index.html")) {
