@@ -20,7 +20,7 @@ fetch("../html/navbar.html")
     .catch(error => console.log(error));
 
 
-if(window.location.href === "http://127.0.0.1:5500/html/index.html"){
+if (window.location.pathname.endsWith("/index.html")) {
     getQuizzes();
 }
 
@@ -30,15 +30,20 @@ if(window.location.href === "http://127.0.0.1:5500/html/index.html"){
 const categorySelect = document.getElementById("category");
 
 async function getQuizzes() {
-    const response = await fetch("https://quizapi.io/api/v1/quizzes", {
-    headers: {
-        "Authorization": "Bearer qa_sk_d8c731c0097feb3cb298c635dfc4975ef32c253b",
-        "Content-Type": "application/json",
-    },
-    });
+    try{
+        const response = await fetch("https://quizapi.io/api/v1/quizzes", {
+        headers: {
+            "Authorization": "Bearer qa_sk_d8c731c0097feb3cb298c635dfc4975ef32c253b",
+            "Content-Type": "application/json",
+        },
+        });
 
-    const res = await response.json();
-    setCategory(res.data);
+        const res = await response.json();
+        setCategory(res.data);
+    }catch(e){
+        alert("Something Went Wrong !!");
+    }
+
 }
 
 //setting quiz categories
@@ -82,7 +87,7 @@ async function startQuiz() {
     
     data = await response.json();
     localStorage.setItem("quizData", JSON.stringify(data));
-    window.location.href = "question.html";
+    window.location.href = "./html/question.html";
     }catch(e){
         alert("Something Went Wrong!!");
         return;
@@ -91,12 +96,15 @@ async function startQuiz() {
 }
 
 
-if(window.location.href === "http://127.0.0.1:5500/html/question.html") {
+if (window.location.pathname.endsWith("/question.html")) {
         data = JSON.parse(localStorage.getItem("quizData"));
         data = data.data;
         nextQtn();
         manageQuiz();
 }
+
+
+
 
 async function nextQtn() {
     if(currQuestion !== 0){
@@ -146,6 +154,8 @@ async function nextQtn() {
     showQuestion();
     startTimer();
 }
+
+
 
 function showQuestion() {
    const qtnNum =  document.getElementById("qtn-num");
@@ -213,20 +223,7 @@ async function manageQuiz() {
     })
 
 }
-// showing questions
 
-
-
-
-
-
-
-
-
-
-
-
-//showing questions and managing score => managing entire quiz
 
 
 
@@ -246,20 +243,13 @@ async function submitAns() {
 }
 
 
-//timer
-
-
-
-
-
-if(window.location.href === "http://127.0.0.1:5500/html/result.html"){
+if (window.location.pathname.endsWith("/result.html")) {
     result();
-    
-
 }
 
 function result() {
    const results = JSON.parse(localStorage.getItem("results"))
+   localStorage.clear();
    const h1  =  document.getElementById("final-score");
    const correctQtn = document.getElementById("correct-qtn");
    const wrongQtn = document.getElementById("wrong-qtn")
@@ -302,7 +292,7 @@ function result() {
    }
 
    totalTime.innerText = `${results.totalTime} s`;
-   accuracy.innerText = `${(results.totalCorrectQtns/(results.totalCorrectQtns + results.totalWrongQtns))*100} %`
+   accuracy.innerText = `${((results.totalCorrectQtns/(results.totalCorrectQtns + results.totalWrongQtns))*100).toFixed(1)} %`
 
 }
 
