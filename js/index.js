@@ -14,7 +14,7 @@ let data = {};
 
 
 
-if (window.location.pathname.endsWith("/index.html")) {
+if (window.location.pathname.endsWith("/")) {
     getQuizzes();
 }
 
