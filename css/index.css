@@ -3,11 +3,14 @@
 body{
     margin:0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
 }
 .dashboard{
     background-color: #1e1c3b;
     color:white;
     height:100vh;
+    min-height: fit-content;
     padding:20px;
 }
 .card{

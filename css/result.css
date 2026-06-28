@@ -36,53 +36,38 @@ body{
     min-width:fit-content;
 }
 .progress-circle{
-
     width:220px;
     height:220px;
-
     position:relative;
 }
 
 svg{
-
     transform:rotate(-90deg);
 }
 
 circle{
-
     fill:none;
-
     stroke-width:12;
 }
 
 .bg{
-
     stroke:#293245;
 }
 
 .progress{
-
     stroke:#3B82F6;
-
     stroke-linecap:round;
-
     stroke-dasharray:565;
-
-
     transition:1s ease;
 }
 
 
 
 .percentage-score{
-
     position:absolute;
-
     top:50%;
     left:50%;
-
     transform:translate(-50%,-50%);
-
     text-align:center;
 }
 
@@ -218,6 +203,7 @@ circle{
  }
  .question-attempt-summary{
     min-width: 80vw;
+    padding:20px;
  }
 
 }
