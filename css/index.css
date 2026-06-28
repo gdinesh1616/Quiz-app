@@ -3,7 +3,6 @@
 body{
     margin:0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    overflow-x: hidden;
 }
 .dashboard{
     background-color: #1e1c3b;
