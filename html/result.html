@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/result.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Result Dashboard</h1>
+        </div>
+
+        <div class="scores">
+            <div class="circular-bar">
+                <div class="progress-circle">
+                    <svg width="220" height="220">
+
+                        <circle
+                            class="bg"
+                            cx="110"
+                            cy="110"
+                            r="90">
+                        </circle>
+
+
+                        <circle
+                            id="progress"
+                            class="progress"
+                            cx="110"
+                            cy="110"
+                            r="90">
+                        </circle>
+
+                    </svg>
+
+                    <div class="percentage-score">
+                        <h1 id="percentage-score">75%</h1>
+                    </div>
+
+                </div>
+            </div>
+            <div class="final-score" >
+                <h3>Final Score</h3>
+                <h1 id="final-score"></h1>
+                <p>points</p>
+                <div class="message" id="message">You have performed well!!</div>
+            </div>
+        </div>
+        <div class="analysis">
+            <div class="question-attempt-summary">
+                <div class="correct-qtn box" >Correct<div id="correct-qtn"></div></div>
+                <div class="wrong-qtn box" >Wrong<div id="wrong-qtn"></div></div>
+                <div class="unattempted-qtn box" >Unattempted<div id="unattempted-qtn"></div></div>
+                <div class="total-qtn box" >Total<div id="total-qtn"></div></div>
+            </div>
+            <div class="extra-info">
+                <div class="time">
+                    <h3>Total Time Taken</h3>
+                    <h1 id="total-time"></h1>
+                </div>
+                <hr>
+                <div class="accuracy">
+                    <h3>Your Accuarcy</h3>
+                    <h1 id="accuracy">70%</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>

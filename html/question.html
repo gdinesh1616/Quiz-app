@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/question.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="body">
+        <div class="question-box">
+            <div class="head">
+                    <div class="question-header">
+                        <div>Question:<span id="qtn-num"></span></div>
+                        <div class="question-type">Single Correct</div>
+                    </div>
+                    <div>
+                        <div class="progress-section">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            <div id="progressPercent"></div>
+                        </div>
+                    </div>
+            </div>
+            <div id="qtn"></div>
+            <div id="options">
+            </div>
+            <div class="submit-btn">
+                <button id="next-btn">Submit</button>
+            </div>
+        </div>
+        <div class="quiz-stats">
+            <div class="stats-row">
+                <div class="stat-box">
+                    <h4>⏰ Time Left</h4>
+                    <p id="time"></p>
+                    <h4>seconds</h4>
+                    <hr>
+                </div>
+
+                <div class="stat-box">
+                    <h4>⭐ Score</h4>
+                    <p id="score"></p>
+                    <h4>points</h4>
+                    <hr>
+                </div>
+
+                <div class="stat-box">
+                    <h4>📝 Question</h4>
+                    <p id="currentQuestion"></p>
+                    <h4>completed</h4>
+                    <hr >
+                </div>
+
+                <div class="stat-box">
+                    <h4>🏆 Total</h4>
+                    <p id="totalQuestions"></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>
